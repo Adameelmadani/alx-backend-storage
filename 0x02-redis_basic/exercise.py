@@ -2,9 +2,11 @@
 """
 This is our module
 """
-import redis
+import redis, uuid
+from typing import Union
 """
 This is redis module
+This is uuid module
 """
 
 
@@ -16,5 +18,12 @@ class Cache:
         """
         This is the constructor function
         """
-        _redis = redis.Redis(host = "localhost", port = "6379")
+        _redis = redis.Redis()
         _redis.flushdb()
+    def store(data: Union[str, bytes, int, float]) -> str:
+        """
+        store function
+        """
+        key = str(uuid.uuid4())
+        _redis.set(key, data)
+        return key
