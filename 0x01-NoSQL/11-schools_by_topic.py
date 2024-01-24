@@ -11,6 +11,6 @@ def schools_by_topic(mongo_collection, topic):
     mylist = mongo_collection.find()
     returnedlist = []
     for elem in mylist:
-        if topic in elem.get("topic")
+        if topic in elem.get("topic"):
             returnedlist.append(elem)
     return returnedlist
