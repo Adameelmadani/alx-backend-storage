@@ -14,7 +14,7 @@ class Cache:
     """
     This is cache class
     """
-    def __init__():
+    def __init__(self):
         """
         This is the constructor function
         """
