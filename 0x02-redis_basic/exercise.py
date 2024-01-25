@@ -31,7 +31,7 @@ class Cache:
         self._redis.set(key, data)
         return key
 
-    def get(self, key, fn):
+    def get(self, key, fn=None):
         """
         get function
         """
